@@ -1,0 +1,80 @@
+<%@ Master Language="C#" Inherits="System.Web.Mvc.ViewMasterPage<OrderPageViewData>" %>
+<%@ Import Namespace="Dtm.Framework.ClientSites" %>
+<% var getFacebookImage = SettingsManager.ContextSettings["SocialPlugins.Facebook.OpenGraphImage"]; %>
+<% var getTwitterImage = SettingsManager.ContextSettings["SocialPlugins.Twitter.OpenGraphImage"]; %>
+
+<!DOCTYPE html>
+<html class="dtm <%= Model.IsMobile ? "@mv" : "@dv" %> dtm--<%= DtmContext.PageCode.ToLower() %> dtm--<%= DtmContext.Page.PageType.ToLower() %> <%= (DtmContext.Page.IsStartPageType ? "@f" : "@b") %> dtm--<%= (DtmContext.Page.PageType == "SubPage" || DtmContext.PageCode != "Index" ? "subpage" : "front") %>">
+
+	<head>
+
+		<title><%= Model.PageTitle %></title>
+	    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	    <meta name="description" content="<%= Model.PageMetaDescription %>">
+	    <meta name="keywords" content="<%= Model.PageMetaKeywords %>">
+		<% var androidThemeBarColor = SettingsManager.ContextSettings["AndroidThemeBarColor", "#ffffff"]; %>
+		<meta name="theme-color" content="<%= androidThemeBarColor %>">
+
+		<!-- // Open Graph Metadata -->
+		<meta property="og:title" content="<%= Model.PageTitle %>">
+		<meta property="og:type" content="website">
+		<meta property="og:description" content="<%= Model.PageMetaDescription %>">
+		<meta property="og:url" content="<%= DtmContext.Domain.FullDomainOfferVersionContext %>">
+		<meta property="og:image" content="<%= getFacebookImage %>">
+
+		<!-- // Twitter Metadata -->
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="<%= Model.PageTitle %>">
+		<meta name="twitter:description" content="<%= Model.PageMetaDescription %>">
+		<meta name="twitter:image" content="<%= getTwitterImage %>">
+		<meta name="twitter:domain" content="<%= DtmContext.Domain.FullDomainOfferVersionContext %>">
+
+	    <% if (DtmContext.IsProxyIpAddress || DtmContext.CampaignDomains.Any(d => d.DomainId == DtmContext.DomainId && d.Domain.ToLower().Contains("dtmstage"))) { %>
+
+	        <meta name="robots" content="noindex, nofollow" />
+
+	    <% } else { %>
+
+	        <meta name="google-site-verification" content="<%= Model.PageMetaVerify %>">
+			<meta name="msvalidate.01" content="2917D7D7D8F86474F86BEC25A9F8D71E">
+	        <link rel="canonical" href="https://<%= Request.Url.Host %>">
+
+	    <% } %>
+
+	    <link rel="shortcut icon" href="/favicon.ico?appV=<%= DtmContext.ApplicationVersion %>" />
+
+	    <!-- ************** AUTHOR NO. BELOW ************** -->
+
+	    <meta name="author" content="<%= DtmContext.Campaign.CampaignName %>" />
+
+	    <!-- ************** AUTHOR NO. ABOVE ************** -->
+
+		<%-- @CSS-HEAD --%>
+		<% Html.RenderPartial("FrameworkCss"); %>
+		<% Html.RenderPartial("Fonts"); %>
+		<% Html.RenderPartial("GetVersionStyles"); %>
+
+		<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+	</head>
+
+	<body class="dtm__in <%= Model.IsMobile ? "dtm__in--mv" : "dtm__in--dv" %>">
+
+
+
+		<%-- // @HEADER --%>
+		<% Html.RenderPartial("Header", Model); %>
+
+
+		<asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+
+
+		<%-- // @FOOTER --%>
+		<% Html.RenderPartial("Footer", Model); %>
+
+
+
+	</body>
+
+</html>

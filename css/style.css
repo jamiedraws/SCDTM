@@ -1,0 +1,486 @@
+@charset "UTF-8";
+
+
+.clear, .clearer, .clearfix { clear: both; }
+
+.hidetext, .hide-text { color: transparent; text-indent: -9999px; margin: 0; height: 0; }
+
+.dtm body { background: url(/images/bkg.jpg) left top repeat; background-attachment: fixed; }
+
+body a { color: #0099ff; }
+.dtm body a { text-decoration: none; border-bottom: 1px solid #0099ff; }
+
+body a:hover { border-bottom-style: dotted; }
+
+.white-bkg { background: white url(/images/white-bkg.jpg) repeat; -webkit-box-shadow: 0 0 30px black; -moz-box-shadow: 0 0 30px black; box-shadow: 0 0 30px black; position: relative; top: -180px; margin-bottom: -180px; padding: 30px 0; }
+
+.center-text { text-align: center; }
+
+.inner { max-width: 1000px; width: 100%; padding: 0 10px; margin: 0 auto; position: relative; }
+
+.h-lg { position: relative; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px; margin: 0 auto 30px; padding: 30px 10px; display: block; width: auto; max-width: 360px; text-align: center; background-color: #00c0ff; background-image: -webkit-gradient(linear, left top, left bottom, from(#0083ff), to(#00c0ff)); background-image: -webkit-linear-gradient(top, #0083ff, #00c0ff); background-image: -moz-linear-gradient(top, #0083ff, #00c0ff); background-image: -o-linear-gradient(top, #0083ff, #00c0ff); background-image: linear-gradient(to bottom, #0083ff, #00c0ff); }
+
+.hero__img { float: right; }
+
+h1 { color: #0099ff; font: normal 45px/1 'ChunkFive Roman'; text-transform: uppercase; }
+
+h4 { font: normal 24px/1.1 'Proxima Nova Bold'; text-transform: uppercase; color: #333333; margin: 0; }
+
+p { font: normal 18px/1.6 'Proxima Nova'; color: #333333; margin: 5px 0 20px; }
+
+.dtm__in--dv .hero__text h1 span { color: #00c0ff; background: -webkit-linear-gradient(#007dff, #00c0ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+.hero__text p { color: white; font: normal 30px/1.2 'Proxima Nova'; text-transform: uppercase; }
+
+.contact { padding: 0; }
+
+.contact h1 { font-size: 60px; margin: 0; }
+
+.contact h2 { color: white; font: normal 40px/1.2 'Tungsten Medium'; text-transform: uppercase; margin: 0; }
+
+.text { margin: 50px 0; }
+
+.text--left img { float: right; margin-left: 30px; margin-bottom: 20px; }
+
+.text--right img { float: left; margin-right: 30px; margin-bottom: 20px; }
+
+footer { text-align: center; color: #616368; font: 25px/1 'Tungsten Medium'; padding: 60px 20px; }
+
+footer img { display: block; margin: 10px auto 0; }
+
+#swipePlaceholder, #demoPlaceholder { max-width: 380px; margin-bottom: 1rem; }
+
+@media all and ( max-width: 900px ) {
+	#swipePlaceholder, #demoPlaceholder {
+		max-width: 280px;
+	}
+}
+
+@media all and ( max-width: 700px ) {
+	#swipePlaceholder, #demoPlaceholder {
+		margin: 0 auto 1rem;
+	}
+}
+
+#swipePlaceholder2 { max-width: 200px; display: block; margin: 10px auto; }
+
+
+.swipe { outline: none; }
+
+.swipe__init__text { padding-left: 5%; }
+
+.dtm__in .swipe .swipe__button, .dtm__in .swipe .swipe__button__term, .dtm__in .swipe .swipe__button__init { padding: 0.5rem; }
+
+.dtm__in .swipe { font-size: 2.5rem; }
+
+#swipePlaceholder2 .swipe .swipe__button__init svg {
+    fill: black;
+}
+#swipePlaceholder2 .swipe .swipe__button__term,
+#swipePlaceholder2 .swipe .swipe__button__init {
+	padding: 0;
+}
+#swipePlaceholder2 .swipe .swipe__button svg, #swipePlaceholder2 .swipe .swipe__button__term svg, #swipePlaceholder2 .swipe .swipe__button__init svg {
+    height: 4rem;
+}
+
+.dtm__in .swipe .swipe__button__term {
+	top: 0.5rem; left: 0.5rem;
+}
+
+.dtm__in .swipe .swipe__term__text {
+	min-width: 100%;
+}
+
+#menu {
+	display: none;
+}
+
+.dtm__in .slicknav_menu {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	background: none;
+	z-index: 100;
+	font-size: 30px;
+	padding: 0;
+	width: 40%;
+}
+
+.dtm__in .slicknav_btn {
+	border-bottom: none;
+	background: none;
+}
+
+.dtm__in .slicknav_btn:hover {
+	border-bottom: none;
+	background: none;
+}
+
+.dtm__in .slicknav_nav {
+	background: #3c3c3c;
+	font: 18px 'Proxima Nova';
+}
+
+.dtm__in .slicknav_nav li {
+	margin: 0;
+	padding: 0;
+}
+
+.dtm__in .slicknav_nav a {
+	margin: 0;
+	padding: 10px 15px;
+}
+
+.dtm__in .slicknav_nav a:hover {
+	border-radius: 0px;
+}
+
+.dtm__in .slicknav_menu .slicknav_icon-bar {
+	background-color: #14b7ff;
+}
+
+@media all and ( min-width: 904px ) {
+	.dtm .dtm__in .max-903 {
+		display: none;
+	}
+	.dtm__in .slicknav_menu {
+		position: fixed;
+	}
+}
+
+@media all and ( max-width: 903px ) {
+	.dtm .dtm__in .min-903 {
+		display: none;
+	}
+}
+
+.ar {
+	padding: 0;
+	width: 100%;
+}
+
+.arrow-1 h1 { color: white; font: 50px/45px 'ChunkFive Roman'; }
+
+.arrow p {
+	color: white;
+	max-width: 280px;
+	display: block;
+	font: 20px/1 'Proxima Nova';
+}
+.arrow p strong {
+	font: normal 20px/1 'Proxima Nova Bold';
+}
+
+.arrow { position: relative; display: inline-block; vertical-align: top; }
+
+
+.arrow-1 h1 { position: absolute; z-index: 2; left: 9%; top: 20%; }
+.arrow-2 p { position: absolute; z-index: 2; left: 12%; top: 25%; }
+.arrow-3 p { position: absolute; z-index: 2; left: 29%; top: 18%; max-width: 200px;}
+
+.arrow { width: 33%; }
+
+.dtm .arrow .num {
+		display: none;
+	}
+
+.arrow-1 { max-width: 325px; max-height: 202px; }
+.arrow-2 { max-width: 325px; max-height: 202px; }
+.arrow-3 { max-width: 325px; max-height: 202px; }
+
+.arrow-1 img,
+.arrow-2 img,
+.arrow-3 img {
+	max-width: 325px;
+	width: 100%;
+}
+
+
+.ar:after {
+	content: "";
+	display: none;
+	width: 100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#007cff+0,00c0ff+100 */
+	background: #007cff; /* Old browsers */
+	background: -moz-linear-gradient(top, #007cff 0%, #00c0ff 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #007cff 0%,#00c0ff 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #007cff 0%,#00c0ff 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	height: 10px;
+	margin: 60px 0 0;
+}
+
+.mobile-list {
+	display: none;
+}
+
+@media (min-width: 1000px) {
+	.desktop-break { display: block; }
+
+  .hero__text h1 span { display: block; }
+  .text--right h4 { padding-top: 50px; }
+  .api h4 { padding-top: 40px; }
+}
+
+@media ( min-width: 903px ) {
+	.hero__text { position: absolute; top: 80px; }
+}
+
+@media (max-width: 1000px) {
+	.dtm__in .arrow-1 h1,
+  .dtm__in .arrow-2 p,
+  .dtm__in .arrow-3 p {
+  	top: 7%; left: 0; padding: 8px;
+  }
+  .dtm__in .arrow-1 h1 {
+		line-height: 1;
+    top: 17%;
+    left: 10%;
+	}
+  .dtm__in .arrow-3 p {
+  	top: 0;
+  	left: 24%;
+  }
+}
+
+@media (min-width: 630px) and (max-width: 780px) {
+	.dtm__in .arrow-1 h1 {
+		line-height: 1;
+    top: 17%;
+    left: 10%;
+    font-size: 30px;
+	}
+  .dtm__in .arrow-2 p {
+  	top: 11%;
+  	left: 5%;
+  }
+  .dtm__in .arrow-3 p {
+  	top: 10%;
+  	left: 24%;
+  }
+  .dtm__in .arrow p,
+  .dtm__in .arrow p strong {
+  	font-size: 15px;
+  }
+}
+@media (max-width: 630px) {
+	.dtm__in .arrow {
+		margin-left: -3px;
+	}
+	.dtm__in .arrow .num {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 20%;
+    color: white;
+    font: 14vw 'ChunkFive Roman';
+    right: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+	.dtm__in .arrow h1,
+	.dtm__in .arrow p {
+		display: none;
+	}
+	.mobile-list {
+		display: block;
+		margin: 0 auto;
+		padding: 10px;
+		list-style: decimal;
+	}
+	.mobile-list li {
+		margin: 5px 5px 5px 30px;
+		font: 20px 'Proxima Nova';
+	}
+	.mobile-list li strong {
+		font: normal 20px 'Proxima Nova Bold';
+	}
+}
+
+
+@media (max-width: 1000px) and (orientation: portrait) {
+	header .inner { padding: 0 5px; }
+  .h-lg { display: block; width: 60%; margin: 0 0 0 5%; padding: 10px; }
+  .h-lg img { width: 100%; }
+  .dtm__in main img { display: block; max-width: 90%; width: auto; margin: 10px auto; float: none; }
+  /* .dtm__in main .text > img { display: none; } */
+  /*.dtm__in main .text img.mobile-only { display: block; width: 98%; margin: 10px auto; }*/
+  main .inner { padding: 0; }
+  .hero__text { background: white; margin-top: 0; position: relative; padding: 10px; text-align: center; background: white url(/images/white-bkg.jpg) repeat; }
+  .dtm__in h1 { font-size: 6vw; }
+  .dtm__in .hero__text p { color: #333; font-size: 16px; }
+  .dtm__in .white-bkg { padding-top: 0; -webkit-box-shadow: none; -moz-box-shadow: none; box-shadow: none; top: 0; margin-bottom: 0; }
+  .dtm__in .text { padding: 10px; }
+  .dtm__in .contact.inner { padding: 30px 10px; }
+  .dtm__in .contact h2 { font-size: 24px; }
+  .swipe-link { margin: 10px auto; }
+}
+
+/*
+@media (min-width: 570px) and (max-width: 750px) {
+	#swipePlaceholder {
+		display: none;
+  }
+}
+*/
+
+@media (max-width: 1000px) and (orientation: landscape) {
+	.h-lg { padding: 10px; }
+  .dtm__in .hero__img { max-width: 50%; }
+  .dtm__in .text img { max-width: 45%; }
+  .dtm__in h1 { font-size: 30px; }
+  .dtm__in .hero__text p, .dtm__in .contact h2 { font-size: 24px; }
+}
+
+@media (min-width: 903px) and (orientation: landscape) {
+	.hero__text {
+		position: absolute;
+	}
+}
+
+.dtm .swipe .swipe__init {
+	justify-content: center;
+	color: #000;
+	background: #00cc97;
+    background: -moz-linear-gradient(top,#00cc97 0%,#00e86c 100%);
+    background: -webkit-linear-gradient(top,#00cc97 0%,#00e86c 100%);
+    background: linear-gradient(to bottom,#00cc97 0%,#00e86c 100%);
+}
+
+.dtm .swipe .swipe__init__text,
+.dtm .swipe .swipe__term__text {
+    text-align: center;
+	text-transform: uppercase;
+	font-size: 100%;
+}
+
+.dtm .swipe .swipe__text,
+.dtm .swipe .swipe__term__text:before,
+.dtm .swipe .swipe__term__text:after {
+	top: 0;
+}
+
+/* form styles */
+#productForm {
+    max-width: 580px;
+    margin:  10px auto;
+}
+
+#productForm input,
+#productForm textarea {
+    font: 30px/50px 'Tungsten Medium';
+    padding: 5px 10px;
+    border-radius: 7px;
+    box-sizing: border-box;
+}
+
+#productForm input {
+    height: 50px;
+}
+
+::placeholder {
+    color: #909090;
+    text-transform: uppercase;
+}
+
+::-webkit-input-placeholder {
+    color: #909090;
+    text-transform: uppercase;
+}
+
+::-moz-input-placeholder {
+    color: #909090;
+    text-transform: uppercase;
+}
+
+::-ms-input-placeholder {
+    color: #909090;
+    text-transform: uppercase;
+}
+
+:-moz-input-placeholder {
+    color: #909090;
+    text-transform: uppercase;
+}
+
+#productForm textarea {
+    width: 100%;
+}
+
+@media all and ( max-width: 1000px ) {
+	.dtm .dtm__in .h1000 {
+		display: none;
+	}
+}
+
+@media all and ( min-width: 1001px ) {
+	.dtm .dtm__in .b1000 {
+		display: none;
+	}
+}
+/*
+.mobile-section {
+	background: #fffff7;
+	box-shadow: inset 0 0px 10px rgba(0,0,0,0.5);
+}
+*/
+
+.nav-btns .swipe-link {
+	width: 100%;
+	padding: 10px;
+	margin: auto;
+}
+
+.nav-btns {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+    width: 100%;
+    padding: 0 10px;
+    background: white;
+	transition: opacity 250ms ease-in-out;
+}
+
+.nav-btns--is-hidden {
+	opacity: 0;
+	z-index: 0;
+}
+
+@media all and ( max-width: 700px ) {
+	.nav-btns .swipe {
+		font-size: 4vw;
+	}
+
+	.nav-btns .swipe .swipe__init__text,
+	.nav-btns .swipe .swipe__term__text {
+		font-size: 1.25em;
+	}
+
+	.nav-btns .swipe .swipe__button,
+	.nav-btns .swipe .swipe__button__init,
+	.nav-btns .swipe .swipe__button__term {
+		padding: .25em;
+	}
+}
+
+.copyright {
+    margin: auto;
+    text-align: center;
+    font-family: 'Proxima Nova Bold';
+    color: #616367;
+}
+
+.h-lg .copyright {
+	position: absolute;
+    bottom: -30%;
+    left: 0;
+    right: 0;
+}
+
+@media all and ( max-width: 700px ) {
+	.h-lg .copyright {
+		font-size: 3vw;
+	}
+}

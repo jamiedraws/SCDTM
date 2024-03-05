@@ -1,0 +1,262 @@
+/*	Swipe Model
+ * --------------------------------------------------------------------- */
+ @font-face {
+    font-family: 'Swipe Tungsten Medium';
+    src: url(/webfonts/Tungsten-Medium.eot?) format('eot');
+    src: local('☺︎'),
+        url(/webfonts/Tungsten-Medium.woff) format('woff'),
+        url(/webfonts/Tungsten-Medium.svg#Tungsten-Medium) format('svg');
+}
+ 
+@-webkit-keyframes fadeSwipeIn {
+    to {
+        opacity: 1;
+    }
+}
+ 
+@keyframes fadeSwipeIn {
+    to {
+        opacity: 1;
+    }
+}
+ 
+.hide {
+    display: none;
+}
+ 
+.swipe, .swipe * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ 
+.swipe {
+    width: 100%;
+    padding: 0;
+    border-radius: 4em;
+    border: none;
+    text-align: left;
+    font: 300 2rem/1 'Swipe Tungsten Medium', sans-serif;
+    -webkit-appearance: none;
+    
+    opacity: 0;
+    -webkit-animation: fadeSwipeIn 250ms ease-in-out 500ms forwards;
+    animation: fadeSwipeIn 250ms ease-in-out 500ms forwards;
+}
+ 
+.swipe,
+.swipe .swipe__in {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+
+    -webkit-mask-image: -webkit-radial-gradient(white, black);
+    mask-image: radial-gradient(white, black);
+
+	-webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+ 
+.swipe .swipe__button {
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+ 
+    max-width: 2.25em;
+    padding: 0.25em;
+    margin: 0;
+    float: left;
+ 
+    background: transparent;
+    border: none;
+    box-shadow: none;
+ 
+    -webkit-transform-origin: 0 0;
+    -webkit-transition: -webkit-transform 50ms linear;
+
+    transform-origin: 0 0;
+    transition: transform 50ms linear;
+}
+
+.swipe,
+.swipe .swipe__in,
+.swipe .swipe__button {
+	-webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+ 
+.swipe .swipe__button svg {
+    width: 1em;
+    height: 1em;
+}
+ 
+.swipe .swipe__button__term, 
+.swipe .swipe__button__init {
+    display: block;
+    max-width: 1.75em;
+    border-radius: 100%;
+    background: white;
+    padding: 0.25em;
+    line-height: 0;
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+}
+ 
+.swipe .swipe__button__init {
+    background: #15b546;
+    box-shadow: 0.05em 0.05em 0.05em #08772a;
+    border: 0.05em solid #0d8030;
+}  
+ 
+.swipe .swipe__button__init svg {
+    fill: white;
+}
+ 
+.swipe .swipe__button__term {
+    display: block;
+    position: absolute;
+    top: 0.25em;
+    left: 0.25em;
+    background: white;
+    box-shadow: 0.05em 0.05em 0.05em #272727;
+    border: 0.05em solid #bbbbbb;
+}
+ 
+.swipe .swipe__button__term svg {
+    fill: #15b546;
+}
+ 
+.swipe .swipe__init,
+.swipe .swipe__term {
+    display: flex;
+    align-items: center;
+    padding: 0 0.5em;
+ 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+ 
+.swipe .swipe__init {
+    justify-content: flex-end;
+    color: #626262;
+    background: white;
+    box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
+}
+ 
+.swipe .swipe__init__text,
+.swipe .swipe__term__text {
+    text-align: center;
+    font-size: 0.9em;
+}
+ 
+.swipe .swipe__term {
+    background: #69d881;
+    box-shadow: inset 0 0 30px #004217;
+    color: white;
+    justify-content: flex-start;
+    clip-path: inset(0 0 0 0);
+    transition: clip-path 250ms linear;
+}
+ 
+.no-shapes .swipe__term {
+    opacity: 0;
+}
+ 
+.swipe--has-before-mode .swipe__term,
+.swipe--has-after-mode .swipe__term {
+    justify-content: center;
+}
+ 
+.swipe--has-after-mode .swipe__term {
+    background: #00b73f;
+    box-shadow: inset 0 0 30px #004217;        
+}
+ 
+.swipe .swipe__term__text {
+    position: relative;
+}
+ 
+.swipe .swipe__term__text:before,
+.swipe .swipe__term__text:after {
+    display: block;
+    position: absolute;
+    top: 0.2em;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    opacity: 0;
+
+    -webkit-transform: translateY(-6rem);
+    transform: translateY(-6rem);
+
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+ 
+.swipe .swipe__term__text:before {
+    content: attr(data-swipe-before);
+}
+ 
+.swipe .swipe__term__text:after {
+    content: attr(data-swipe-after);
+}
+ 
+.swipe .swipe__text {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+    position: relative;
+    top: 0.1em;
+}
+ 
+.swipe .swipe__button--resistance {
+    -webkit-transition: -webkit-transform 150ms ease-out;
+    transition: transform 150ms ease-out;
+}
+ 
+.swipe .swipe__term--resistance {
+    -webkit-transition: all 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: all 100ms cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+ 
+.no-shapes .swipe--in-motion .swipe__term {
+    opacity: 1;
+}
+ 
+.swipe .swipe--is-hidden,
+.swipe .swipe__button__term {
+    opacity: 0;
+}
+ 
+.swipe--has-after-mode .swipe__button__term {
+    opacity: 1;
+}
+ 
+.swipe--has-before-mode .swipe__text,
+.swipe--has-after-mode .swipe__text {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    opacity: 0;
+}
+ 
+.swipe--has-before-mode .swipe__term__text:before,
+.swipe--has-after-mode .swipe__term__text:after {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+}
+ 
+.swipe--has-after-mode .swipe__term__text:before {
+    -webkit-transform: translateY(6rem);
+    transform: translateY(6rem);
+    opacity: 0;
+}
+ 
+.swipe--not-clickable {
+    pointer-events: none;
+}
